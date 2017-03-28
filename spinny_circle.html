@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background:black;
+        }
+        .circle{
+            color:aquamarine;
+            border-radius: 50%;
+            width: 66.66vmin;
+            height: 66.66vmin;
+            transform: translate(calc(50vw - 33.33vmin), calc(50vh - 33.33vmin));
+            background: radial-gradient(circle at center top, #00ffff, rgba(0, 0, 0, 0)),
+                radial-gradient(circle at bottom left, #ffff00, rgba(0, 0, 0, 0)),
+                radial-gradient(circle at bottom right, #ff00ff, rgba(0, 0, 0, 0));
+            /*区别于正常的覆盖*/
+            background-blend-mode: multiply;
+            animation:spinny 15s ease-in-out infinite;
+        }
+        @keyframes spinny {
+            from {
+                transform:translate(calc(50vw - 33.33vmin), calc(50vh - 33.33vmin)) rotate(0);
+            }
+            to {
+                transform:translate(calc(50vw - 33.33vmin), calc(50vh - 33.33vmin)) rotate(100turn);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="circle">hello di</div>
+</body>
+</html>
